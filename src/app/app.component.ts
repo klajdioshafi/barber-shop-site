@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-barbershop-site';
+  closed: boolean = true;
+
+  onOpenSidenav(sidenav: HTMLDivElement, menu: HTMLImageElement) {
+    this.closed = false;
+    sidenav.style.right = "0px";
+    menu.src = "../assets/img/close.png";
+  }
+
+  onCloseSidenav(sidenav: HTMLDivElement, menu: HTMLImageElement) {
+    this.closed = true;
+    sidenav.style.right = "-250px";
+    menu.src = "../assets/img/menu.png";
+  }
 }
